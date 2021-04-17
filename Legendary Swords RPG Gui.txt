@@ -1,0 +1,126 @@
+
+local ScreenGui = Instance.new("ScreenGui")
+local Main = Instance.new("Frame")
+local InfMoney = Instance.new("TextButton")
+local InfDmgFarm = Instance.new("TextButton")
+local Farm = Instance.new("TextButton")
+local CreditsFrame = Instance.new("Frame")
+local TextButton = Instance.new("TextButton")
+local TitleFrame = Instance.new("Frame")
+local TextButton_2 = Instance.new("TextButton")
+
+--Properties:
+
+ScreenGui.Parent = game.CoreGui
+
+Main.Name = "Main"
+Main.Parent = ScreenGui
+Main.BackgroundColor3 = Color3.fromRGB(255, 170, 0)
+Main.Position = UDim2.new(0.0346133709, 0, 0.442078352, 0)
+Main.Size = UDim2.new(0, 314, 0, 304)
+Main.Active = true
+Main.Draggable = true
+
+
+InfMoney.Name = "InfMoney"
+InfMoney.Parent = Main
+InfMoney.BackgroundColor3 = Color3.fromRGB(85, 255, 0)
+InfMoney.Position = UDim2.new(0.0445859879, 0, 0.230263159, 0)
+InfMoney.Size = UDim2.new(0, 121, 0, 50)
+InfMoney.Font = Enum.Font.GothamBold
+InfMoney.Text = "Infinite Money"
+InfMoney.TextColor3 = Color3.fromRGB(0, 0, 0)
+InfMoney.TextScaled = true
+InfMoney.TextSize = 14.000
+InfMoney.TextWrapped = true
+InfMoney.MouseButton1Down:connect(function()
+	game.Players.LocalPlayer.RemoteFunctions.SwordShopSystem:FireServer("Buy",-50000000000000000000000000000000000000000000000000000000000000000000000000000000, "Frostbrand")
+end)
+
+InfDmgFarm.Name = "InfDmgFarm"
+InfDmgFarm.Parent = Main
+InfDmgFarm.BackgroundColor3 = Color3.fromRGB(85, 255, 0)
+InfDmgFarm.Position = UDim2.new(0.0445859879, 0, 0.450657904, 0)
+InfDmgFarm.Size = UDim2.new(0, 121, 0, 50)
+InfDmgFarm.Font = Enum.Font.GothamBold
+InfDmgFarm.Text = "Infinite Damage Farm"
+InfDmgFarm.TextColor3 = Color3.fromRGB(0, 0, 0)
+InfDmgFarm.TextScaled = true
+InfDmgFarm.TextSize = 14.000
+InfDmgFarm.TextWrapped = true
+InfDmgFarm.MouseButton1Down:connect(function()
+	while true do
+		wait (0.1)
+		game.Players.LocalPlayer.RemoteFunctions.UpgradeFunction:FireServer("Damage", "One")
+
+
+
+	end
+end)
+
+Farm.Name = "Farm"
+Farm.Parent = Main
+Farm.BackgroundColor3 = Color3.fromRGB(85, 255, 0)
+Farm.Position = UDim2.new(0.57006371, 0, 0.230263159, 0)
+Farm.Size = UDim2.new(0, 121, 0, 50)
+Farm.Font = Enum.Font.GothamBold
+Farm.Text = "AFK Level Farm"
+Farm.TextColor3 = Color3.fromRGB(0, 0, 0)
+Farm.TextSize = 14.000
+Farm.TextWrapped = true
+Farm.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://pastebin.com/raw/CH2WBbz1"))()
+end)
+
+CreditsFrame.Name = "CreditsFrame"
+CreditsFrame.Parent = Main
+CreditsFrame.BackgroundColor3 = Color3.fromRGB(255, 170, 0)
+CreditsFrame.Position = UDim2.new(-0.00157253002, 0, 0.832410514, 0)
+CreditsFrame.Size = UDim2.new(0, 314, 0, 50)
+
+TextButton.Parent = CreditsFrame
+TextButton.BackgroundColor3 = Color3.fromRGB(255, 170, 0)
+TextButton.Size = UDim2.new(0, 314, 0, 50)
+TextButton.Font = Enum.Font.GothamBlack
+TextButton.Text = "Made by Ghoul#1337 for Meme Hub"
+TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton.TextSize = 14.000
+
+TitleFrame.Name = "TitleFrame"
+TitleFrame.Parent = Main
+TitleFrame.BackgroundColor3 = Color3.fromRGB(255, 170, 0)
+TitleFrame.BorderColor3 = Color3.fromRGB(255, 170, 0)
+TitleFrame.Position = UDim2.new(0, 0, -0.0023649116, 0)
+TitleFrame.Size = UDim2.new(0, 314, 0, 50)
+
+TextButton_2.Parent = TitleFrame
+TextButton_2.BackgroundColor3 = Color3.fromRGB(255, 170, 0)
+TextButton_2.Size = UDim2.new(0, 314, 0, 50)
+TextButton_2.Font = Enum.Font.GothamBlack
+TextButton_2.Text = "The Legendary Swords RPG OP GUI"
+TextButton_2.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_2.TextSize = 14.000
+
+-- Scripts:
+
+local function NTFS_fake_script() -- Main.LocalScript 
+	local script = Instance.new('LocalScript', Main)
+
+	local TweenService = game:GetService("TweenService")
+	
+	local frame = script.Parent
+	
+	local tweenInfo1 = TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.Out)
+	local tween1 = TweenService:Create(frame, tweenInfo1, {Position=UDim2.new(0.5, 0, 0.5, 0)})
+	local tweenInfo2 = TweenInfo.new(1.5, Enum.EasingStyle.Quart, Enum.EasingDirection.InOut)
+	local tween2 = TweenService:Create(frame, tweenInfo2, {Rotation=360})
+	
+	tween1.Completed:Connect(function()
+		tween2:Play()
+	end)
+	
+	wait(2)
+	
+	tween1:Play()
+end
+coroutine.wrap(NTFS_fake_script)()
